@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Giver Sign Up - Reallocate</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #062f53, #000000); /* Background gradient */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .signup-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #062f53;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .input-field:focus {
+            border-color: #062f53;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #062f53;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #00f2fe;
+        }
+
+        .otp-btn {
+            width: auto;
+            background-color: #e0e0e0;
+            color: #062f53;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .otp-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        #otp-section {
+            margin-top: 20px;
+        }
+
+        .signup-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #062f53;
+        }
+
+        .signup-footer a {
+            color: #00f2fe;
+            text-decoration: underline;
+        }
+
+        .signup-footer a:hover {
+            color: #4facfe;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1 class="signup-title">Service Giver Sign Up</h1>
+        <form action="#" method="POST">
+            <input type="text" placeholder="Name" class="input-field" required>
+            <input type="tel" placeholder="Phone Number" class="input-field" required>
+            
+            <!-- Request OTP Button -->
+            <button type="button" class="otp-btn" onclick="requestOTP()">Request OTP</button>
+
+            <!-- OTP Input Field -->
+            <div id="otp-section" style="display: none;">
+                <input type="text" placeholder="Enter OTP" class="input-field" required>
+            </div>
+
+            <input type="text" placeholder="Location" class="input-field" required>
+            <input type="text" placeholder="Aadhar Number" class="input-field" required>
+            
+            <!-- Profile Pic Upload -->
+            <input type="file" accept="image/*" class="input-field" required>
+            <label for="profile-pic" class="input-field">Upload Profile Picture (JPG, PNG)</label>
+            
+            <input type="email" placeholder="Email Address" class="input-field" required>
+            <input type="password" placeholder="Password" class="input-field" required>
+            <input type="password" placeholder="Confirm Password" class="input-field" required>
+            <input type="text" placeholder="Service Provided" class="input-field" required>
+            <input type="text" placeholder="Product Type" class="input-field" required>
+            <input type="text" placeholder="Product Name" class="input-field" required>
+
+            <!-- Product Working Video Upload -->
+            <input type="file" accept="video/*" class="input-field" required>
+            <label for="product-video" class="input-field">Upload Product Working Video (MP4, AVI)</label>
+
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div class="signup-footer">
+            <p>Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function requestOTP() {
+            alert("OTP has been sent to your phone!");
+            document.getElementById('otp-section').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
