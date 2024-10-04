@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #062f53, #000000); /* Updated background gradient */
+            min-height: 100vh;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .signup-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #062f53; /* Updated title color */
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .input-field:focus {
+            border-color: #062f53; /* Updated focus color */
+            outline: none;
+        }
+
+        /* Style for buttons */
+        .submit-btn, .otp-btn {
+            width: 100%;
+            background-color: #062f53; /* Updated button color */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #00f2fe; /* Updated hover color */
+        }
+
+        /* Smaller OTP button */
+        .otp-btn {
+            width: auto;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            background-color: #e0e0e0;
+            color: #062f53; /* Updated OTP button text color */
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .otp-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #062f53; /* Updated footer color */
+        }
+
+        .login-footer a {
+            color: #00f2fe; /* Updated link color */
+            text-decoration: underline;
+        }
+
+        .login-footer a:hover {
+            color: #4facfe;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1 class="signup-title">Customer Sign Up</h1>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            
+            <!-- Name Input -->
+            <input type="text" placeholder="Name" class="input-field" required>
+            
+            <!-- Phone Number Input -->
+            <input type="tel" placeholder="Phone Number" class="input-field" required>
+            
+            <!-- Request OTP Button (smaller and centered) -->
+            <button type="button" class="otp-btn" onclick="requestOTP()">Request OTP</button>
+
+            <!-- OTP Input Field -->
+            <div id="otp-section" style="display: none;">
+                <input type="text" placeholder="Enter OTP" class="input-field" required>
+            </div>
+
+            <!-- Location Input (Dropdown) -->
+            <select class="input-field" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <!-- Add more options as required -->
+            </select>
+
+            <!-- Address Input -->
+            <textarea placeholder="Enter your address" class="input-field" rows="3" required></textarea>
+            
+            <!-- Aadhar Number Input -->
+            <input type="text" placeholder="Aadhar Number" class="input-field" required maxlength="12">
+            
+            <!-- Profile Picture Upload with Label -->
+            <label for="profile-pic" class="block mb-2 text-gray-700">Upload Profile Picture:</label>
+            <input type="file" id="profile-pic" class="input-field" required accept="image/*">
+            
+            <!-- Email Input -->
+            <input type="email" placeholder="Email Address" class="input-field" required>
+
+            <!-- Password Input -->
+            <input type="password" placeholder="Password" class="input-field" required>
+
+            <!-- Confirm Password Input -->
+            <input type="password" placeholder="Confirm Password" class="input-field" required>
+            
+            <!-- Sign Up Button -->
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+
+        <!-- Footer with Link to Login -->
+        <div class="login-footer">
+            <p>Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function requestOTP() {
+            // OTP request logic (backend or service integration)
+            alert("OTP has been sent to your phone!");
+            // Show the OTP input field after OTP is requested
+            document.getElementById('otp-section').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
+
