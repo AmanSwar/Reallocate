@@ -1,3 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to ServiceHub</h1>
+
+Display services
+    <h2>Available Services</h2>
+    <div class="service-list">
+        {% for service in services %}
+            <div class="service-item">
+                <h3>{{ service.name }}</h3>
+                <p>Type: {{ service.service_type }}</p>
+                <p>Price: ${{ service.price }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+  Display products 
+    <h2>Available Products for Rent</h2>
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product-item">
+                <h3>{{ product.name }}</h3>
+                <p>Owner: {{ product.user.username }}</p>
+                <a href="{{ url_for('product_list') }}">View Product</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +126,7 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Navigation -->
+
     <nav class="bg-white bg-opacity-10 py-4 fixed w-full z-50">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white">Reallocate</a>
@@ -88,13 +138,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Video Background -->
+
     <section class="hero flex items-center justify-center text-white relative">
         <div class="video-container">
             <video autoplay loop muted>
-                <source src="Video by Tima Miroshnichenko from Pexels: https://www.pexels.com/video/male-hands-using-wall-chaser-6474178/" type="video/mp4">
-                <source src="video2.mp4" type="video/mp4">
-                <source src="video3.mp4" type="video/mp4">
+                <source src="{{ url_for('static', filename='video/video2.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="video-overlay"></div>
