@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Available Services</h1>
+    <div class="service-list">
+        {% for service in services %}
+            <div class="service-item">
+                <h3>{{ service.name }}</h3>
+                <p>Type: {{ service.service_type }}</p>
+                <p>Price: ${{ service.price }}</p>
+                <a href="#">Contact</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

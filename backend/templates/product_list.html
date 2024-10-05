@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Products for Rent</h1>
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product-item">
+                <h3>{{ product.name }}</h3>
+                <p>Owner: {{ product.user.username }}</p>
+                <a href="#">Rent Now</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
