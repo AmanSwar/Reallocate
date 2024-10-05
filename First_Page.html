@@ -79,7 +79,7 @@
             background-color: #FF6B6B;
         }
         a.card-link {
-            display: block;
+            display: inline-block;
             text-decoration: none;
             color: inherit;
         }
@@ -107,6 +107,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        
     </style>
 </head>
 <body class="antialiased">
@@ -202,7 +203,7 @@
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
                 <a href="#" class="card-link">
                     <div class="glass-card p-6 text-center h-48 flex flex-col justify-between">
-                        <img src="./imgs/tech.jpg" width = "100%">
+                        <img src="{{ url_for('static', filename='images/vr.png') }}" width = "100%">
                         <h3 class="text-xl font-semibold mb-2">Technology and Gadgets</h3>
                         <p class="text-sm">Virtual Reality (VR) Headsets, Drones, High-end Cameras (DSLRs, mirrorless cameras, GoPros) and many more</p>
                     </div>
